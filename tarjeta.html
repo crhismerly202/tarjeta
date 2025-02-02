@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opciones Sí y No</title>
+    <link rel="stylesheet" href="Diseño.css">
+    <script>
+        // Función para mostrar el mensaje "Yeeyyy" al hacer clic en el botón "Sí"
+        function mostrarMensajeSi() {
+            // Ocultar la caja original
+            document.getElementById("contenedor-original").style.display = "none";
+            // Mostrar el nuevo mensaje para "Sí"
+            document.getElementById("mensaje-si").style.display = "block";
+            // Cambiar el gif
+            document.getElementById("imagen-gif").src = "cat01.gif"; // Cambia esta ruta por el archivo de gif que quieras
+        }
+
+        // Función para mostrar el mensaje "Ay vuelve a intentarlo" al hacer clic en el botón "No"
+        function mostrarMensajeNo() {
+            // Ocultar la caja original
+            document.getElementById("contenedor-original").style.display = "none";
+            // Mostrar el nuevo mensaje para "No"
+            document.getElementById("mensaje-no").style.display = "block";
+            // Cambiar el gif
+            document.getElementById("imagen-gif").src = "cat03.gif"; // Cambia esta ruta por el archivo de gif que quieras
+        }
+
+        // Función para volver al contenido original
+        function volverAlContenido() {
+            // Volver a mostrar la caja original
+            document.getElementById("contenedor-original").style.display = "block";
+            // Ocultar todos los mensajes
+            document.getElementById("mensaje-si").style.display = "none";
+            document.getElementById("mensaje-no").style.display = "none";
+            // Cambiar el gif al original
+            document.getElementById("imagen-gif").src = "cat02.gif"; // Aquí se vuelve al gif original
+        }
+    </script>
+</head>
+<body>
+
+    <img id="imagen-gif" src="cat02.gif" alt="Imagen decorativa">
+
+    <div class="container" id="contenedor-original">
+        <h2>💖 ¿Te gustaría ser mi San Valentín? 💖</h2>
+        <div class="buttons">
+            <button class="btn-si" onclick="mostrarMensajeSi()">✨ ¡Sí! ✨</button>
+            <button class="btn-no" onclick="mostrarMensajeNo()">❌ No ❌</button>
+        </div>
+    </div>
+
+    <!-- Mensaje para el botón "Sí" -->
+    <div class="container" id="mensaje-si" style="display: none;">
+        <h2>Yeii! ¡Gracias por decir sí! Te amo mucho💗</h2>
+    </div>
+
+    <!-- Mensaje para el botón "No" -->
+    <div class="container" id="mensaje-no" style="display: none;">
+        <h2>Ay💔🥺, vuelve a intentarlo, ¿quieres? 😅</h2>
+        <button class="btn-no" onclick="volverAlContenido()">Volver a intentarlo ❤️‍🩹</button>
+    </div>
+
+</body>
+</html>
